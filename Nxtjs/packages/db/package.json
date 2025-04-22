@@ -1,0 +1,16 @@
+{
+  "name": "@repo/db",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^22.14.1",
+    "prisma": "^6.6.0"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^2.9.0",
+    "@prisma/client": "6.6.0"
+  },
+  "exports": {
+    "./prisma": "./src/index.ts"
+  }
+}

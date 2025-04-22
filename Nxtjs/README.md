@@ -1,63 +1,122 @@
-# 💸 Paytm Wallet Clone
+# 🧱 Next.js Full-Stack Baseplate
 
-A web application inspired by Paytm Wallet, built with modern web technologies and organized using a monorepo structure.
-
----
-
-## 🧱 Tech Stack
-
-- **Monorepo:** [Turborepo](https://turbo.build/repo)
-- **Frontend:** [Next.js](https://nextjs.org/)
-- **Backend:**
-  - Basic app logic using **Next.js API routes**
-  - **Node.js** server for handling webhooks
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components:** [shadcn/ui](https://ui.shadcn.dev/)
-- **State Management:** [Jotai](https://jotai.org/)
-- **Database:** [Prisma](https://www.prisma.io/) with **PostgreSQL**
-- **Authentication:** [NextAuth.js v5](https://next-auth.js.org/) with Prisma Adapter
+A modern full-stack starter template built with **Turborepo**, **Next.js**, **Tailwind CSS**, **Prisma**, **Auth.js**, and more — perfect for building scalable apps like payment dashboards, SaaS tools, and beyond.
 
 ---
 
-## 🗂️ Project Structure
+## 🚀 Tech Stack
 
-This project follows a monorepo structure using **Turborepo**. Most of the shareable logic and dependencies (like utilities, types, store(state management), Database, config) live inside the `packages/` folder for reusability across apps.
-
----
-
-## 🚀 Goals
-
-- Modular and scalable architecture using **Turborepo**
-- Clean UI with **shadcn/ui** and **Tailwind CSS**
-- Robust authentication using **NextAuth v5** and **Prisma Adapter**
-- Smooth state management with **Jotai**
-- Reliable data handling via **PostgreSQL** and **Prisma ORM**
-- Extendable backend with webhook support using **Node.js**
+- ⚡ **Turborepo** – Monorepo and build orchestration
+- ⚛️ **Next.js** – Full-stack React framework
+- 🎨 **Tailwind CSS** – Utility-first styling framework
+- 💅 **shadcn/ui** – Reusable, themeable components powered by Tailwind
+- 🛢 **PostgreSQL + Prisma** – Scalable database with type-safe ORM
+- 🔐 **Auth.js v5** – Authentication using Prisma Adapter
+- 🧠 **Jotai** – Minimalistic and flexible state management
+- 🧾 **TypeScript** – Strongly typed for better DX and maintainability
 
 ---
 
-## 🛠️ Work In Progress
+## 📁 Folder Structure
 
-This project is under active development. The focus is on:
-
-- Making the best use of **Turborepo**
-- Keeping shared logic DRY and reusable
-- Building a seamless user experience
+```bash
+.
+├── apps/
+│   ├── dev-app/              # Main production app (Next.js)
+│   └── web-app/              # Main production app (Next.js)
+│
+├── packages/
+│   ├── db/                   # Prisma schema and DB client (shared)
+│   ├── eslint-config/        # Shared ESLint configuration
+│   ├── store/                # Jotai-based global state management
+│   ├── typescript-config/    # Shared TypeScript config
+│   └── ui/                   # Shared UI components (shadcn + Tailwind)
+│
+├── .turbo/                   # Turborepo cache and pipeline settings
+├── .vscode/                  # Editor settings and extensions
+├── .gitignore
+├── .npmrc
+```
 
 ---
 
-## 📦 Installation
+## 🧪 Features
 
-Coming soon...
+✅ Shared authentication via Auth.js v5 + Prisma  
+✅ Reusable, themeable components using shadcn/ui + Tailwind  
+✅ Global shared state with Jotai  
+✅ PostgreSQL + Prisma ORM for strong backend support  
+✅ Fully typed with TypeScript  
+✅ Scalable monorepo structure for team and feature growth  
 
 ---
 
-## 🧪 Testing
+## ⚙️ Get Started
 
-Coming soon...
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/MukeshAbhi/Starter
+cd Nxtjs
+```
+
+### 2. Install Dependencies
+
+```bash
+pnpm install
+```
+
+### 3. Setup Environment Variables
+
+#### ➤ In `packages/db/.env` (or root if shared):
+
+```env
+DATABASE_URL=postgresql://<your-db-url>
+```
+
+#### ➤ In `apps/dev-app/.env.local` and `apps/web-app/.env.local`:
+
+```env
+AUTH_SECRET=your_auth_secret
+AUTH_GITHUB_ID=your_github_client_id
+AUTH_GITHUB_SECRET=your_github_client_secret
+AUTH_JWT_SECRET=your_jwt_secret
+```
+
+---
+
+### 4. Initialize Database
+
+```bash
+pnpm prisma migrate dev --name init --filter=packages/db
+pnpm prisma generate --filter=packages/db
+```
+
+---
+
+### 5. Run Dev Server
+
+```bash
+pnpm run dev --filter=apps/web-app
+```
+
+---
+
+## 📦 Deployment
+
+Easily deploy to platforms like **Vercel**, **Render**, or any cloud provider that supports PostgreSQL and Node.js. Just ensure your environment variables are configured in the respective dashboard.
+
+---
+
+## 🙌 Credits
+
+- 🧑‍💻 Built and maintained by [@MukeshAbhi](https://github.com/MukeshAbhi)
+- 🖌️ UI powered by [shadcn/ui](https://ui.shadcn.com)
+- 🔒 Auth via [Auth.js](https://authjs.dev/)
+- 🛠 DB layer by [Prisma](https://www.prisma.io/)
 
 ---
 
 ## 📄 License
 
-MIT
+MIT License – Free to use and customize.

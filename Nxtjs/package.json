@@ -2,6 +2,8 @@
   "name": "paytm",
   "private": true,
   "scripts": {
+    "setup": "node setup.js",
+    "setup:db": "node setup.js --db",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",

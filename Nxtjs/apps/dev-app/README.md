@@ -1,63 +1,36 @@
-# 💸 Paytm Wallet Clone
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
 
-A web application inspired by Paytm Wallet, built with modern web technologies and organized using a monorepo structure.
+## Getting Started
 
----
+First, run the development server:
 
-## 🧱 Tech Stack
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- **Monorepo:** [Turborepo](https://turbo.build/repo)
-- **Frontend:** [Next.js](https://nextjs.org/)
-- **Backend:**
-  - Basic app logic using **Next.js API routes**
-  - **Node.js** server for handling webhooks
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components:** [shadcn/ui](https://ui.shadcn.dev/)
-- **State Management:** [Jotai](https://jotai.org/)
-- **Database:** [Prisma](https://www.prisma.io/) with **PostgreSQL**
-- **Authentication:** [NextAuth.js v5](https://next-auth.js.org/) with Prisma Adapter
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 🗂️ Project Structure
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Inter, a custom Google Font.
 
-This project follows a monorepo structure using **Turborepo**. Most of the shareable logic and dependencies (like utilities, types, store(state management), Database, config) live inside the `packages/` folder for reusability across apps.
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-## 🚀 Goals
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Modular and scalable architecture using **Turborepo**
-- Clean UI with **shadcn/ui** and **Tailwind CSS**
-- Robust authentication using **NextAuth v5** and **Prisma Adapter**
-- Smooth state management with **Jotai**
-- Reliable data handling via **PostgreSQL** and **Prisma ORM**
-- Extendable backend with webhook support using **Node.js**
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
----
+## Deploy on Vercel
 
-## 🛠️ Work In Progress
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-This project is under active development. The focus is on:
-
-- Making the best use of **Turborepo**
-- Keeping shared logic DRY and reusable
-- Building a seamless user experience
-
----
-
-## 📦 Installation
-
-Coming soon...
-
----
-
-## 🧪 Testing
-
-Coming soon...
-
----
-
-## 📄 License
-
-MIT
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

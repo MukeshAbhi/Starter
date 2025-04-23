@@ -90,6 +90,9 @@ This command will:
 #### ➔ In `packages/db/.env`  
 Automatically generated in Step 3. Make sure it includes your PostgreSQL `DATABASE_URL`.
 
+#### ➔ manually add .env In `apps/dev-app` and `apps/web-app`
+ 
+
 #### ➔ In `apps/dev-app/.env.local` and `apps/web-app/.env.local`:
 
 ```env
@@ -100,6 +103,12 @@ AUTH_JWT_SECRET=your_jwt_secret
 ```
 
 ---
+
+#### To generate AUTH_SECRET
+
+```bash
+    npx auth secret
+```
 
 ### 5. Add Prisma Schema
 
@@ -127,7 +136,7 @@ pnpm turbo db:migrate --filter=@repo/db
 ### 7. Run Dev Server
 
 ```bash
-pnpm run dev --filter=apps/web-app
+pnpm run dev --filter=apps/dev-app
 ```
 
 ---

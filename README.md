@@ -51,13 +51,13 @@ A modern full-stack starter template built with **Turborepo**, **Next.js**, **Ta
 
 ---
 
-## ⚙️ Get Started
+## 🚀 Project Setup Guide
 
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/MukeshAbhi/Starter
-cd Nxtjs
+cd Starter/Nxtjs
 ```
 
 ### 2. Install Dependencies
@@ -66,15 +66,31 @@ cd Nxtjs
 pnpm install
 ```
 
-### 3. Setup Environment Variables
+### 3. Setup Prisma PostgreSQL Database
 
-#### ➤ In `packages/db/.env` (or root if shared):
+This step initializes your database and Prisma schema.
 
-```env
-DATABASE_URL=postgresql://<your-db-url>
+```bash
+pnpm setup:db
 ```
 
-#### ➤ In `apps/dev-app/.env.local` and `apps/web-app/.env.local`:
+This command will:
+- Install required packages for `@repo/db`
+- Sets up a Prisma PostgresSQL Database
+- Initialize Prisma
+- Create the `.env` and `schema.prisma` files in `packages/db`
+
+> 🔧 If this fails with Prisma not found, ensure Prisma is installed in `@repo/db`:
+> ```bash
+> pnpm add prisma --save-dev --filter=@repo/db
+> ```
+
+### 4. Setup Environment Variables
+
+#### ➔ In `packages/db/.env`  
+Automatically generated in Step 3. Make sure it includes your PostgreSQL `DATABASE_URL`.
+
+#### ➔ In `apps/dev-app/.env.local` and `apps/web-app/.env.local`:
 
 ```env
 AUTH_SECRET=your_auth_secret
@@ -85,16 +101,30 @@ AUTH_JWT_SECRET=your_jwt_secret
 
 ---
 
-### 4. Initialize Database
+### 5. Add Prisma Schema
 
-```bash
-pnpm prisma migrate dev --name init --filter=packages/db
-pnpm prisma generate --filter=packages/db
+Visit [Prisma Adapter Schemas](https://authjs.dev/getting-started/adapters/prisma) and copy the **PostgreSQL schema**.
+
+Paste it into:
+
+```
+packages/db/prisma/schema.prisma
 ```
 
 ---
 
-### 5. Run Dev Server
+### 6. Initialize Database
+
+```bash
+pnpm turbo db:generate --filter=@repo/db
+pnpm turbo db:migrate --filter=@repo/db
+```
+
+> Make sure your PostgreSQL server is running and your `DATABASE_URL` is correct in `packages/db/.env`.
+
+---
+
+### 7. Run Dev Server
 
 ```bash
 pnpm run dev --filter=apps/web-app

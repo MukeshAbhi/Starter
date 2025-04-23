@@ -1,4 +1,4 @@
-import { adapter } from "@repo/db/prisma"
+import { adapter } from "@repo/db"
 import { NextAuthConfig } from "next-auth"
 import GitHub from "next-auth/providers/github"
  

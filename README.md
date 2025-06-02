@@ -57,7 +57,6 @@ A modern full-stack starter template built with **Turborepo**, **Next.js**, **Ta
 
 ```bash
 git clone https://github.com/MukeshAbhi/Starter
-cd Starter/Nxtjs
 ```
 
 ### 2. Install Dependencies
@@ -93,7 +92,7 @@ Automatically generated in Step 3. Make sure it includes your PostgreSQL `DATABA
 #### ➔ manually add .env In `apps/dev-app` and `apps/web-app`
  
 
-#### ➔ In `apps/dev-app/.env.local` and `apps/web-app/.env.local`:
+#### ➔ In `apps/dev-app/.env.local` and `apps/web-app/.env.local`
 
 ```env
 AUTH_SECRET=your_auth_secret

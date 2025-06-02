@@ -1,12 +1,13 @@
 # 🧱 Next.js Full-Stack Baseplate
 
-A modern full-stack starter template built with **Turborepo**, **Next.js**, **Tailwind CSS**, **Prisma**, **Auth.js**, and more — perfect for building scalable apps like payment dashboards, SaaS tools, and beyond.
+A modern full-stack starter template built with **Turborepo**, **Next.js**, **Node.js** ,**Tailwind CSS**, **Prisma**, **Auth.js**, and more — perfect for building scalable apps like payment dashboards, SaaS tools, and beyond.
 
 ---
 
 ## 🚀 Tech Stack
 
 - ⚡ **Turborepo** – Monorepo and build orchestration
+- 🌐 **Node.js** – Server-side JavaScript runtime
 - ⚛️ **Next.js** – Full-stack React framework
 - 🎨 **Tailwind CSS** – Utility-first styling framework
 - 💅 **shadcn/ui** – Reusable, themeable components powered by Tailwind
@@ -24,6 +25,7 @@ A modern full-stack starter template built with **Turborepo**, **Next.js**, **Ta
 ├── apps/
 │   ├── dev-app/              # Main production app (Next.js)
 │   └── web-app/              # Main production app (Next.js)
+│   └── node-app/             # Node.js API (Express)
 │
 ├── packages/
 │   ├── db/                   # Prisma schema and DB client (shared)
@@ -42,6 +44,8 @@ A modern full-stack starter template built with **Turborepo**, **Next.js**, **Ta
 
 ## 🧪 Features
 
+✅ Two Next.js apps (dev and web)  
+✅ One Node.js API (Express)  
 ✅ Shared authentication via Auth.js v5 + Prisma  
 ✅ Reusable, themeable components using shadcn/ui + Tailwind  
 ✅ Global shared state with Jotai  
@@ -74,12 +78,14 @@ pnpm setup:db
 ```
 
 This command will:
+
 - Install required packages for `@repo/db`
 - Sets up a Prisma PostgresSQL Database
 - Initialize Prisma
 - Create the `.env` and `schema.prisma` files in `packages/db`
 
 > 🔧 If this fails with Prisma not found, ensure Prisma is installed in `@repo/db`:
+>
 > ```bash
 > pnpm add prisma --save-dev --filter=@repo/db
 > ```
@@ -87,21 +93,14 @@ This command will:
 ### 4. Setup Environment Variables
 
 #### ➔ In `packages/db/.env`  
+
 Automatically generated in Step 3. Make sure it includes your PostgreSQL `DATABASE_URL`.
 
-#### ➔ manually add .env In `apps/dev-app` and `apps/web-app`
- 
+#### ➔  change .env.example to .env.local In `apps/dev-app` , `apps/web-app` and `node-app`
 
-#### ➔ In `apps/dev-app/.env.local` and `apps/web-app/.env.local`
+#### ➔ In `apps/dev-app/.env.local` , `apps/web-app/.env.local` and `node-app/.env.local`
 
-```env
-AUTH_SECRET=your_auth_secret
-AUTH_GITHUB_ID=your_github_client_id
-AUTH_GITHUB_SECRET=your_github_client_secret
-AUTH_JWT_SECRET=your_jwt_secret
-```
-
----
+Add Database URL from `packages/db/.env`
 
 #### To generate AUTH_SECRET
 
@@ -115,8 +114,10 @@ Visit [Prisma Adapter Schemas](https://authjs.dev/getting-started/adapters/prism
 
 Paste it into:
 
-```
+```bash
+
 packages/db/prisma/schema.prisma
+
 ```
 
 ---
